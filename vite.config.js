@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite';
 import glob from 'glob';
 import injectHTML from 'vite-plugin-html-inject';
-import FullReload from 'vite-plugin-full-reload';
+import fullReload from 'vite-plugin-full-reload';
 import htmlInject from 'vite-plugin-html-inject';
 
 export default defineConfig(({ command }) => {
@@ -26,6 +26,6 @@ export default defineConfig(({ command }) => {
       },
       outDir: '../dist',
     },
-    plugins: [htmlInject(), injectHTML(), FullReload(['./src/**/**.html'])],
+    plugins: [htmlInject(), injectHTML(), fullReload(['src/**', 'index.html'])],
   };
 });
